@@ -11,7 +11,7 @@ export interface IListingsParams {
   category?: string;
 }
 
-export async function getListings(params: IListingsParams) {
+export default async function getListings(params: IListingsParams) {
   try {
     const {
       userId,
@@ -81,12 +81,13 @@ export async function getListings(params: IListingsParams) {
         createdAt: "desc",
       },
     });
-    const safeListing = listings.map((listing) => ({
+
+    const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
     }));
 
-    return safeListing;
+    return safeListings;
   } catch (error: any) {
     throw new Error(error);
   }

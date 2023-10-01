@@ -1,5 +1,5 @@
 import getCurrentUser from "@/app/Actions/GetCurrentUser";
-import { getListingsById } from "@/app/Actions/GetListingsById";
+import getListingsById from "@/app/Actions/GetListingsById";
 import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/EmptyState";
 import React from "react";
